@@ -34,7 +34,7 @@ then
 	echo Waiting for postgres to start
 	sleep 30
 	echo Creating starter database
-	podman run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --postgres > initdb.sql
+	podman run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --postgresql > initdb.sql
 	podman exec -i guac-postgres sh -c 'psql -U postgres' < initdb.sql
 else
 	echo DB Already exists
