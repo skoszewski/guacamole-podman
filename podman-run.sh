@@ -40,10 +40,15 @@ else
 	echo DB Already exists
 fi
 	
+if [ ! -f $HOME/.guacamole.env ]
+then
+	cp -a guacamole.env $HOME/.guacamole.env
+fi
+
 podman run --name guacamole \
 	--pod guac-pod \
 	-v ./config:/config \
-	--env-file ./guacamole.env \
+	--env-file $HOME/.guacamole.env \
 	-e POSTGRES_HOSTNAME=127.0.0.1 \
 	-e POSTGRES_PASSWORD=guacamole \
 	-d \
