@@ -53,3 +53,4 @@ podman run --name guacamole \
 	-e POSTGRES_PASSWORD=guacamole \
 	-d \
 	guacamole/guacamole
+
