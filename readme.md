@@ -30,5 +30,13 @@ systemctl --user start guacamole-guac-pod.service
 
 The pod will automatically start after system reboot.
 
+## Updating container images
+
+Stop the pod using the `systemctl stop guacamole-guac-pod.service`.
+
+Run `podman-upgrade-images.sh`.
+
+Start the pod: `systemctl stop guacamole-guac-pod.service`.
+
 ## Help!
 If you need any help with getting this running, please raise an issue and I'll do my best to assist
